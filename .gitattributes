@@ -1,0 +1,67 @@
+# Set a default behavior for all files to normalize according to core.autocrlf rule
+# This is the project's master rule.
+#
+* text=auto
+
+#
+# Explicit rules for common text files.
+# These will be normalized to LF line endings.
+#
+# Optional: Explicit text file rules for clarity, though * text=auto handles these automatically
+*.html text
+*.css text
+*.js text
+*.json text
+*.md text
+*.py text
+*.rb text
+*.txt text
+*.xml text
+*.yml text
+*.yaml text
+
+#
+# Rules for PowerShell scripts.
+# These are text and work best with LF in modern, cross-platform environments.
+#
+*.ps1 text
+*.psm1 text
+
+#
+# Handle special cases for scripts that require specific line endings.
+#
+# Shell scripts MUST have LF endings to be executable on Unix-like systems.
+*.sh text eol=lf
+
+# Legacy Windows scripts MUST have CRLF endings to work correctly.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.vbs text eol=crlf
+
+#
+# Explicitly declare binary files to prevent Git from touching them.
+# This prevents file corruption.
+#
+
+# Image files (SVG is treated as binary to prevent normalization issues)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.svg binary
+
+# Font files
+*.ttf binary
+*.ttc binary
+*.otf binary
+*.eot binary
+*.woff binary
+*.woff2 binary
+
+# Archives, compiled code, and other binary formats
+*.pdf binary
+*.zip binary
+*.exe binary
+*.dll binary
